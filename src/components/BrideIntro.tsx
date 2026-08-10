@@ -1,0 +1,204 @@
+import React from 'react';
+import { motion } from 'motion/react';
+
+const getGraphemes = (str: string): string[] => {
+  if (typeof Intl !== 'undefined' && Intl.Segmenter) {
+    const segmenter = new Intl.Segmenter('te', { granularity: 'grapheme' });
+    return Array.from(segmenter.segment(str), (s) => s.segment);
+  }
+  return str.split('');
+};
+
+export const BrideIntro: React.FC = () => {
+  const line1 = getGraphemes('వధువు');
+  const line2Part1 = getGraphemes('చి.ల.సౌ.');
+  const line2Part2 = getGraphemes('శ్రావణి');
+  const line3 = getGraphemes('శ్రీ కోలా వెంకటరమణ &');
+  const line4 = getGraphemes('శ్రీమతి జనకమ్మ ల ఏకైక కుమార్తె.');
+
+  return (
+    <section className="relative min-h-screen w-full flex flex-col justify-between items-center overflow-hidden bg-[#E9E5E1] select-none snap-start snap-always">
+      {/* 1. Background Image (bg_1.svg) */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <img
+          src="/assets/bg_1.svg"
+          alt="Background Texture"
+          className="w-full h-full object-cover object-center"
+        />
+      </div>
+
+      {/* 2. Top Thoranam (thoranam_2.svg) - Always visible at top edge with gentle drop-in animation */}
+      <motion.div
+        initial={{ opacity: 0, y: -40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.01 }}
+        transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+        className="absolute top-0 inset-x-0 z-30 w-full flex justify-center pointer-events-none"
+      >
+        <img
+          src="/assets/thoranam_2.svg"
+          alt="Thoranam Decoration"
+          className="w-full max-w-5xl h-auto object-contain"
+        />
+      </motion.div>
+
+      {/* Center Content Wrapper - Moved up by 4px (shifted 6px down from -10px) */}
+      <div className="relative z-20 my-auto flex flex-col items-center justify-center w-full max-w-lg px-4 pt-16 pb-28 sm:pt-24 sm:pb-36 -mt-[4px]">
+        {/* 3. Bride Image (Bride.png) */}
+        <motion.div
+          initial={{ scale: 0.6, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: [0.34, 1.56, 0.64, 1] }}
+          className="mb-2 sm:mb-4 flex justify-center"
+        >
+          <img
+            src="/assets/Bride.png"
+            alt="Bride Sravani"
+            className="w-44 h-44 sm:w-60 sm:h-60 object-contain drop-shadow-2xl"
+          />
+        </motion.div>
+
+        {/* 4. Text Sequence with Outer White Stroke */}
+        <div className="flex flex-col items-center justify-center text-center space-y-1 sm:space-y-2">
+          {/* Text 1: వధువు */}
+          <h3 className="font-noto-telugu text-xl sm:text-3xl text-[#009174] font-bold tracking-wide leading-none flex justify-center flex-wrap paint-order-stroke [-webkit-text-stroke:3px_#ffffff] drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
+            {line1.map((char, index) => (
+              <motion.span
+                key={`l1-${index}`}
+                initial={{ opacity: 0, y: 15, filter: 'blur(4px)' }}
+                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.4,
+                  delay: 0.7 + index * 0.1,
+                  ease: 'easeOut',
+                }}
+                className="inline-block"
+              >
+                {char === ' ' ? '\u00A0' : char}
+              </motion.span>
+            ))}
+          </h3>
+
+          {/* Text 2: చి.ల.సౌ. శ్రావణి (shifted up by 16px, with 12px gap after) */}
+          <div className="flex items-baseline justify-center gap-1.5 sm:gap-2 flex-wrap -mt-[16px] mb-[12px]">
+            {/* చి.ల.సౌ. (Noto Sans Telugu, SemiCondensedBold, AC1619 color, FFFFFF outer stroke) */}
+            <span className="font-noto-telugu text-lg sm:text-xl md:text-2xl text-[#AC1619] font-bold leading-none tracking-normal flex justify-center paint-order-stroke [-webkit-text-stroke:2.5px_#ffffff] drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
+              {line2Part1.map((char, index) => (
+                <motion.span
+                  key={`l2p1-${index}`}
+                  initial={{ opacity: 0, y: 15, filter: 'blur(4px)' }}
+                  whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.4,
+                    delay: 1.1 + index * 0.08,
+                    ease: 'easeOut',
+                  }}
+                  className="inline-block"
+                >
+                  {char === ' ' ? '\u00A0' : char}
+                </motion.span>
+              ))}
+            </span>
+
+            {/* శ్రావణి (Ramabhadra, Regular, AC1619 color, FFFFFF outer stroke - 3x size of చి.ల.సౌ.) */}
+            <h2 className="font-ramabhadra text-[54px] sm:text-[60px] md:text-[72px] text-[#AC1619] font-normal leading-none tracking-wider flex justify-center paint-order-stroke [-webkit-text-stroke:4.5px_#ffffff] drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
+              {line2Part2.map((char, index) => (
+                <motion.span
+                  key={`l2p2-${index}`}
+                  initial={{ opacity: 0, y: 20, scale: 0.8, filter: 'blur(6px)' }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.45,
+                    delay: 1.4 + index * 0.1,
+                    ease: 'easeOut',
+                  }}
+                  className="inline-block"
+                >
+                  {char === ' ' ? '\u00A0' : char}
+                </motion.span>
+              ))}
+            </h2>
+          </div>
+
+          {/* Text 3 & 4: శ్రీ కోలా వెంకటరమణ & శ్రీమతి జనకమ్మ ల ఏకైక కుమార్తె. */}
+          <div className="font-noto-telugu text-base sm:text-xl md:text-2xl text-[#009174] font-semibold leading-snug tracking-normal space-y-0.5 sm:space-y-1 paint-order-stroke [-webkit-text-stroke:2.5px_#ffffff] drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
+            {/* Line 3: శ్రీ కోలా వెంకటరమణ & */}
+            <div className="flex justify-center flex-wrap">
+              {line3.map((char, index) => (
+                <motion.span
+                  key={`l3-${index}`}
+                  initial={{ opacity: 0, y: 12, filter: 'blur(4px)' }}
+                  whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.35,
+                    delay: 1.8 + index * 0.04,
+                    ease: 'easeOut',
+                  }}
+                  className="inline-block"
+                >
+                  {char === ' ' ? '\u00A0' : char}
+                </motion.span>
+              ))}
+            </div>
+
+            {/* Line 4: శ్రీమతి జనకమ్మ ల ఏకైక కుమార్తె. */}
+            <div className="flex justify-center flex-wrap">
+              {line4.map((char, index) => (
+                <motion.span
+                  key={`l4-${index}`}
+                  initial={{ opacity: 0, y: 12, filter: 'blur(4px)' }}
+                  whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.35,
+                    delay: 2.2 + index * 0.03,
+                    ease: 'easeOut',
+                  }}
+                  className="inline-block"
+                >
+                  {char === ' ' ? '\u00A0' : char}
+                </motion.span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* 5. Latha Border (latha_border_1.svg) drawing effect from center */}
+        <motion.div
+          initial={{ scaleX: 0, opacity: 0 }}
+          whileInView={{ scaleX: 1, opacity: 1 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, delay: 2.7, ease: [0.25, 1, 0.5, 1] }}
+          style={{ transformOrigin: 'center' }}
+          className="mt-3 sm:mt-4 flex justify-center w-full max-w-[240px] sm:max-w-[300px]"
+        >
+          <img
+            src="/assets/latha_border_1.svg"
+            alt="Decorative Border"
+            className="w-full h-auto object-contain"
+          />
+        </motion.div>
+      </div>
+
+      {/* 6. Bottom Decor (bottom_decor_1.svg) - Always visible at bottom edge with gentle slide-up animation */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.01 }}
+        transition={{ duration: 0.9, delay: 0.3, ease: 'easeOut' }}
+        className="absolute bottom-0 inset-x-0 z-10 w-full flex justify-center pointer-events-none"
+      >
+        <img
+          src="/assets/bottom_decor_1.svg"
+          alt="Bottom Decoration"
+          className="w-full h-auto object-contain object-bottom drop-shadow-xl sm:max-w-xl md:max-w-2xl"
+        />
+      </motion.div>
+    </section>
+  );
+};
