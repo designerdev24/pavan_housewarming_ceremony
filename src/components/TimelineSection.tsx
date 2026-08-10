@@ -245,7 +245,7 @@ const TimelineItem: React.FC<{
         viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: 0.5, delay: 0.3, ease: [0.34, 1.56, 0.64, 1] }}
         onClick={() => onSelect(item)}
-        className="shrink-0 w-28 sm:w-40 md:w-48 aspect-[4/5] relative rounded-xl sm:rounded-2xl overflow-hidden shadow-lg border-2 border-white group bg-stone-100 cursor-pointer transition-all duration-300 hover:shadow-2xl hover:border-[#D4AF37] hover:scale-[1.02]"
+        className="shrink-0 w-[40%] max-w-[210px] aspect-[4/5] relative rounded-xl sm:rounded-2xl overflow-hidden shadow-lg border-2 border-white group bg-stone-100 cursor-pointer transition-all duration-300 hover:shadow-2xl hover:border-[#D4AF37] hover:scale-[1.02]"
       >
         <img
           src={item.image}

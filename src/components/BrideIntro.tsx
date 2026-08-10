@@ -42,27 +42,27 @@ export const BrideIntro: React.FC = () => {
         />
       </motion.div>
 
-      {/* Center Content Wrapper - Moved up by 4px (shifted 6px down from -10px) */}
-      <div className="relative z-20 my-auto flex flex-col items-center justify-center w-full max-w-lg px-4 pt-16 pb-28 sm:pt-24 sm:pb-36 -mt-[4px]">
+      {/* Center Content Wrapper */}
+      <div className="relative z-20 my-auto flex flex-col items-center justify-center w-full max-w-lg px-4 py-8 sm:py-12">
         {/* 3. Bride Image (Bride.png) */}
         <motion.div
           initial={{ scale: 0.6, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.8, delay: 0.4, ease: [0.34, 1.56, 0.64, 1] }}
-          className="mb-2 sm:mb-4 flex justify-center"
+          className="mb-3 sm:mb-4 flex justify-center"
         >
           <img
             src="/assets/Bride.png"
             alt="Bride Sravani"
-            className="w-44 h-44 sm:w-60 sm:h-60 object-contain drop-shadow-2xl"
+            className="w-48 h-48 sm:w-60 sm:h-60 md:w-64 md:h-64 object-contain drop-shadow-2xl"
           />
         </motion.div>
 
         {/* 4. Text Sequence with Outer White Stroke */}
-        <div className="flex flex-col items-center justify-center text-center space-y-1 sm:space-y-2">
+        <div className="flex flex-col items-center justify-center text-center space-y-2 sm:space-y-3 w-full">
           {/* Text 1: వధువు */}
-          <h3 className="font-noto-telugu text-xl sm:text-3xl text-[#009174] font-bold tracking-wide leading-none flex justify-center flex-wrap paint-order-stroke [-webkit-text-stroke:3px_#ffffff] drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
+          <h3 className="font-noto-telugu text-xl sm:text-2xl md:text-3xl text-[#009174] font-bold tracking-wide leading-none flex justify-center flex-wrap paint-order-stroke [-webkit-text-stroke:3px_#ffffff] drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
             {line1.map((char, index) => (
               <motion.span
                 key={`l1-${index}`}
@@ -81,9 +81,9 @@ export const BrideIntro: React.FC = () => {
             ))}
           </h3>
 
-          {/* Text 2: చి.ల.సౌ. శ్రావణి (shifted up by 16px, with 12px gap after) */}
-          <div className="flex items-baseline justify-center gap-1.5 sm:gap-2 flex-wrap -mt-[16px] mb-[12px]">
-            {/* చి.ల.సౌ. (Noto Sans Telugu, SemiCondensedBold, AC1619 color, FFFFFF outer stroke) */}
+          {/* Text 2: చి.ల.సౌ. శ్రావణి */}
+          <div className="flex items-baseline justify-center gap-2 sm:gap-3 flex-wrap my-1 sm:my-2">
+            {/* చి.ల.సౌ. */}
             <span className="font-noto-telugu text-lg sm:text-xl md:text-2xl text-[#AC1619] font-bold leading-none tracking-normal flex justify-center paint-order-stroke [-webkit-text-stroke:2.5px_#ffffff] drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
               {line2Part1.map((char, index) => (
                 <motion.span
@@ -103,8 +103,8 @@ export const BrideIntro: React.FC = () => {
               ))}
             </span>
 
-            {/* శ్రావణి (Ramabhadra, Regular, AC1619 color, FFFFFF outer stroke - 3x size of చి.ల.సౌ.) */}
-            <h2 className="font-ramabhadra text-[54px] sm:text-[60px] md:text-[72px] text-[#AC1619] font-normal leading-none tracking-wider flex justify-center paint-order-stroke [-webkit-text-stroke:4.5px_#ffffff] drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
+            {/* శ్రావణి */}
+            <h2 className="font-ramabhadra text-4xl sm:text-6xl md:text-7xl text-[#AC1619] font-normal leading-none tracking-wider flex justify-center paint-order-stroke [-webkit-text-stroke:4px_#ffffff] drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
               {line2Part2.map((char, index) => (
                 <motion.span
                   key={`l2p2-${index}`}
@@ -125,7 +125,7 @@ export const BrideIntro: React.FC = () => {
           </div>
 
           {/* Text 3 & 4: శ్రీ కోలా వెంకటరమణ & శ్రీమతి జనకమ్మ ల ఏకైక కుమార్తె. */}
-          <div className="font-noto-telugu text-base sm:text-xl md:text-2xl text-[#009174] font-semibold leading-snug tracking-normal space-y-0.5 sm:space-y-1 paint-order-stroke [-webkit-text-stroke:2.5px_#ffffff] drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
+          <div className="font-noto-telugu text-base sm:text-xl md:text-2xl text-[#009174] font-semibold leading-relaxed tracking-normal space-y-1 paint-order-stroke [-webkit-text-stroke:2.5px_#ffffff] drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
             {/* Line 3: శ్రీ కోలా వెంకటరమణ & */}
             <div className="flex justify-center flex-wrap">
               {line3.map((char, index) => (
@@ -175,7 +175,7 @@ export const BrideIntro: React.FC = () => {
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.8, delay: 2.7, ease: [0.25, 1, 0.5, 1] }}
           style={{ transformOrigin: 'center' }}
-          className="mt-3 sm:mt-4 flex justify-center w-full max-w-[240px] sm:max-w-[300px]"
+          className="mt-4 sm:mt-6 flex justify-center w-full max-w-[240px] sm:max-w-[300px]"
         >
           <img
             src="/assets/latha_border_1.svg"
