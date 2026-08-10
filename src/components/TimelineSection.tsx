@@ -23,7 +23,7 @@ interface TimelineItemData {
   isoEnd?: string;
 }
 
-const DUMMY_MAP_URL = 'https://maps.app.goo.gl/FRA2Nx9iEguQ2mCx7';
+const VENUE_MAP_URL = 'https://maps.app.goo.gl/3XyUUTV83urCTdedA';
 
 const TIMELINE_EVENTS: TimelineItemData[] = [
   {
@@ -34,7 +34,7 @@ const TIMELINE_EVENTS: TimelineItemData[] = [
     venueLabel: 'వేదిక:',
     addressLines: ['పెళ్లికుమారుని', 'స్వగృహమునందు'],
     image: '/assets/Timeline Pellikoduku.png',
-    mapUrl: DUMMY_MAP_URL,
+    mapUrl: VENUE_MAP_URL,
     isoStart: '20260816T010500Z',
     isoEnd: '20260816T040500Z',
   },
@@ -46,7 +46,7 @@ const TIMELINE_EVENTS: TimelineItemData[] = [
     venueLabel: 'వేదిక:',
     addressLines: ['పెళ్లికుమార్తె', 'స్వగృహమునందు'],
     image: '/assets/Timeline Pellikoothuru.png',
-    mapUrl: DUMMY_MAP_URL,
+    mapUrl: VENUE_MAP_URL,
     isoStart: '20260816T021200Z',
     isoEnd: '20260816T051200Z',
   },
@@ -58,7 +58,7 @@ const TIMELINE_EVENTS: TimelineItemData[] = [
     venueLabel: 'వేదిక:',
     addressLines: ['పెళ్లికుమారుని', 'స్వగృహమునందు'],
     image: '/assets/Timeline Haldhi.png',
-    mapUrl: DUMMY_MAP_URL,
+    mapUrl: VENUE_MAP_URL,
     isoStart: '20260818T133000Z',
     isoEnd: '20260818T163000Z',
   },
@@ -70,7 +70,7 @@ const TIMELINE_EVENTS: TimelineItemData[] = [
     venueLabel: 'వేదిక:',
     addressLines: ['కెవిఆర్ కన్వెన్షన్,', 'సర్వవరం జంక్షన్,', 'కాకినాడ.'],
     image: '/assets/Timeline Sumuhurtham.png',
-    mapUrl: DUMMY_MAP_URL,
+    mapUrl: VENUE_MAP_URL,
     isoStart: '20260823T230500Z',
     isoEnd: '20260824T020500Z',
   },
@@ -82,7 +82,7 @@ const TIMELINE_EVENTS: TimelineItemData[] = [
     venueLabel: 'వేదిక:',
     addressLines: ['కెవిఆర్ కన్వెన్షన్,', 'సర్వవరం జంక్షన్,', 'కాకినాడ.'],
     image: '/assets/Timeline Reception.png',
-    mapUrl: DUMMY_MAP_URL,
+    mapUrl: VENUE_MAP_URL,
     isoStart: '20260825T133000Z',
     isoEnd: '20260825T163000Z',
   },
@@ -477,7 +477,7 @@ export const TimelineSection: React.FC = () => {
                 <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-3 pt-1">
                   {/* Map Directions Button */}
                   <a
-                    href={selectedEvent.mapUrl || DUMMY_MAP_URL}
+                    href={selectedEvent.mapUrl || VENUE_MAP_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full sm:w-1/2 py-2.5 px-4 rounded-full bg-[#006B55] hover:bg-[#005241] text-white font-noto-telugu font-bold text-sm sm:text-base flex items-center justify-center gap-2 shadow-md border border-[#D4AF37] transition-all hover:shadow-lg active:scale-95"
