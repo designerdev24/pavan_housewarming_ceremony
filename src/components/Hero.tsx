@@ -9,9 +9,20 @@ const getGraphemes = (str: string): string[] => {
   return str.split('');
 };
 
-export const Hero: React.FC = () => {
+interface HeroProps {
+  onThoranamLoaded?: () => void;
+}
+
+export const Hero: React.FC<HeroProps> = ({ onThoranamLoaded }) => {
   const word2 = getGraphemes('వారి');
   const word3 = getGraphemes('వివాహ ఆహ్వానం');
+
+  const handleThoranamLoad = () => {
+    window.dispatchEvent(new CustomEvent('thoranam_loaded'));
+    if (onThoranamLoaded) {
+      onThoranamLoaded();
+    }
+  };
 
   return (
     <section className="relative min-h-screen w-full flex flex-col justify-between items-center overflow-hidden bg-[#E9E5E1] select-none snap-start snap-always">
@@ -34,11 +45,13 @@ export const Hero: React.FC = () => {
         initial={{ y: '-100%', opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.9, delay: 0.3, ease: [0.25, 1, 0.5, 1] }}
+        onAnimationComplete={handleThoranamLoad}
         className="relative z-20 w-full flex justify-center top-0"
       >
         <img
           src="/assets/thoranam_1.svg"
           alt="Thoranam Decoration"
+          onLoad={handleThoranamLoad}
           className="w-full max-w-5xl h-auto object-contain"
         />
       </motion.div>

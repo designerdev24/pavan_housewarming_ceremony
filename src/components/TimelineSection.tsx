@@ -505,4 +505,3 @@ export const TimelineSection: React.FC = () => {
     </section>
   );
 };
-
