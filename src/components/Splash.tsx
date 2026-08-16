@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { SplashFlowerShower } from './SplashFlowerShower';
+import bananaTreeSvg from '../../assets/banana_tree.svg';
+import bananaTreeLeftSvg from '../../assets/banana_tree_left.svg';
 
 interface SplashProps {
   onEnter: () => void;
@@ -26,6 +28,46 @@ export const Splash: React.FC<SplashProps> = ({ onEnter }) => {
         />
         <div className="absolute inset-0 bg-white/25 backdrop-blur-lg" />
       </div>
+
+      {/* Left Banana Tree (50% visible inside screen, 256px up, reduced size) */}
+      <motion.div
+        initial={{ x: '-100%', opacity: 0 }}
+        animate={{ x: '-50%', opacity: 1 }}
+        transition={{
+          duration: 1.4,
+          delay: 0.2,
+          ease: [0.16, 1, 0.3, 1],
+        }}
+        className="absolute left-0 bottom-64 z-10 pointer-events-none select-none"
+      >
+        <motion.img
+          src={bananaTreeLeftSvg}
+          alt="Banana Tree Left Decor"
+          animate={{ y: [0, -6, 0], rotate: [0, 1, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+          className="h-[45vh] sm:h-[52vh] md:h-[58vh] max-h-[500px] w-auto object-contain drop-shadow-xl origin-bottom"
+        />
+      </motion.div>
+
+      {/* Right Banana Tree (50% visible inside screen, 256px up, reduced size) */}
+      <motion.div
+        initial={{ x: '100%', opacity: 0 }}
+        animate={{ x: '50%', opacity: 1 }}
+        transition={{
+          duration: 1.4,
+          delay: 0.2,
+          ease: [0.16, 1, 0.3, 1],
+        }}
+        className="absolute right-0 bottom-64 z-10 pointer-events-none select-none"
+      >
+        <motion.img
+          src={bananaTreeSvg}
+          alt="Banana Tree Right Decor"
+          animate={{ y: [0, -6, 0], rotate: [0, -1, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+          className="h-[45vh] sm:h-[52vh] md:h-[58vh] max-h-[500px] w-auto object-contain drop-shadow-xl origin-bottom"
+        />
+      </motion.div>
 
       {/* Realistic Flower Petals Shower Effect - Scoped strictly to Splash Screen */}
       <SplashFlowerShower />
