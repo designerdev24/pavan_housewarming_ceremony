@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { FlowerShower } from './FlowerShower';
 
 const getGraphemes = (str: string): string[] => {
   if (typeof Intl !== 'undefined' && Intl.Segmenter) {
@@ -11,19 +12,13 @@ const getGraphemes = (str: string): string[] => {
 
 export const FooterSection: React.FC = () => {
   const headerTitle = getGraphemes('మీ ఆగమనాభిలాషులు');
-  const name1 = getGraphemes('శ్రీ కోలా వెంకటరమణ');
-  const name2 = getGraphemes('జనకమ్మ');
+  const name1 = getGraphemes('శ్రీ చెంబాటి కోటేశ్వరరావు');
+  const name2 = getGraphemes('శ్రీమతి చెంబాటి నగరాణి');
 
   return (
-    <section className="relative min-h-screen w-full flex flex-col justify-between items-center overflow-hidden bg-[#E9E5E1] select-none snap-start snap-always">
-      {/* 1. Background Image (bg_1.svg) */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <img
-          src="/assets/bg_1.svg"
-          alt="Background Texture"
-          className="w-full h-full object-cover object-center"
-        />
-      </div>
+    <section className="relative min-h-screen w-full flex flex-col justify-between items-center overflow-hidden bg-gradient-to-b from-[#F3E8DD] to-[#F2ECE4] select-none snap-start snap-always">
+      {/* Falling Flower Shower */}
+      <FlowerShower />
 
       {/* 2. Top Thoranam (thoranam_2.svg) */}
       <motion.div
@@ -50,15 +45,17 @@ export const FooterSection: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.3, ease: [0.34, 1.56, 0.64, 1] }}
           className="mb-3 sm:mb-4 flex justify-center"
         >
-          <img
+          <motion.img
             src="/assets/lord_ganesh.svg"
             alt="Lord Ganesh"
+            animate={{ y: [0, -4, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
             className="w-14 h-14 sm:w-20 sm:h-20 object-contain drop-shadow-md"
           />
         </motion.div>
 
         {/* Title: మీ ఆగమనాభిలాషులు */}
-        <h2 className="font-dhurjati text-3xl sm:text-5xl md:text-6xl text-[#006B55] font-bold leading-tight tracking-wider flex justify-center flex-wrap mb-4 sm:mb-6 text-center paint-order-stroke [-webkit-text-stroke:2.5px_#ffffff] drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
+        <h2 className="font-dhurjati text-3xl sm:text-5xl md:text-6xl text-[#1B1F24] font-bold leading-tight tracking-wider flex justify-center flex-wrap mb-4 sm:mb-6 text-center paint-order-stroke [-webkit-text-stroke:3px_#ffffff] drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
           {headerTitle.map((char, index) => (
             <motion.span
               key={`f-ht-${index}`}
@@ -79,8 +76,8 @@ export const FooterSection: React.FC = () => {
 
         {/* Host Names */}
         <div className="flex flex-col items-center justify-center space-y-1 sm:space-y-2 mb-4">
-          {/* Name 1: శ్రీ కోలా వెంకటరమణ */}
-          <h3 className="font-ramabhadra text-2xl sm:text-4xl md:text-5xl text-[#AC1619] font-normal leading-tight tracking-wide flex justify-center flex-wrap paint-order-stroke [-webkit-text-stroke:3px_#ffffff] drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
+          {/* Name 1: శ్రీ చెంబాటి కోటేశ్వరరావు */}
+          <h3 className="font-ramabhadra text-2xl sm:text-4xl md:text-5xl text-[#9F5A2A] font-normal leading-tight tracking-wide flex justify-center flex-wrap paint-order-stroke [-webkit-text-stroke:3px_#ffffff] drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
             {name1.map((char, index) => (
               <motion.span
                 key={`f-n1-${index}`}
@@ -99,8 +96,8 @@ export const FooterSection: React.FC = () => {
             ))}
           </h3>
 
-          {/* Name 2: జనకమ్మ */}
-          <h3 className="font-ramabhadra text-2xl sm:text-4xl md:text-5xl text-[#AC1619] font-normal leading-tight tracking-wide flex justify-center flex-wrap paint-order-stroke [-webkit-text-stroke:3px_#ffffff] drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
+          {/* Name 2: శ్రీమతి చెంబాటి నగరాణి */}
+          <h3 className="font-ramabhadra text-2xl sm:text-4xl md:text-5xl text-[#9F5A2A] font-normal leading-tight tracking-wide flex justify-center flex-wrap paint-order-stroke [-webkit-text-stroke:3px_#ffffff] drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
             {name2.map((char, index) => (
               <motion.span
                 key={`f-n2-${index}`}
@@ -136,34 +133,48 @@ export const FooterSection: React.FC = () => {
           />
         </motion.div>
 
-        {/* Bottom Note (Well Wishers) in Small Letters */}
+
+        {/* Address Box */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 2.1, ease: 'easeOut' }}
-          className="mt-2 sm:mt-4 px-4 py-3 sm:py-3.5 rounded-2xl bg-white/45 backdrop-blur-sm border border-[#D4AF37]/40 shadow-sm max-w-lg mx-auto"
+          transition={{ duration: 0.6, delay: 2.2, ease: 'easeOut' }}
+          className="mt-2 sm:mt-3 px-6 py-4 rounded-2xl bg-white/45 backdrop-blur-sm border border-[#D4AF37]/40 shadow-sm max-w-lg mx-auto flex flex-col items-center justify-center space-y-1.5"
         >
-          <p className="font-noto-telugu text-xs sm:text-sm text-[#006B55] font-semibold leading-relaxed tracking-normal text-center drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
-            శ్రీయుతులు వాడపల్లి గంగాధర శాస్త్రి, ప్రభల పరదేశి, మలపాక రామకృష్ణ,వాడపల్లి వేణుగోపాల్, వాడపల్లి లక్ష్మీగణేష్ మరియు బంధుమిత్రుల అభినందనలతో...
+          <h4 className="font-noto-telugu text-base sm:text-lg text-[#9F5A2A] font-bold tracking-wide text-center">
+            చిరునామా
+          </h4>
+          <p className="font-noto-telugu text-sm sm:text-base text-[#1B1F24] font-semibold leading-relaxed tracking-normal text-center">
+            ప్లాట్ నెం. 645A, ఎల్లయ్య ఎన్క్లేవ్, AB కాలనీ, తెల్లాపూర్.
           </p>
+        </motion.div>
+
+        {/* Location Navigation Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, delay: 2.4, ease: 'easeOut' }}
+          className="mt-4 sm:mt-5 z-30 flex justify-center w-full"
+        >
+          <button
+            onClick={() => window.open('https://www.google.com/maps/search/?api=1&query=17.472972,78.297611', '_blank')}
+            aria-label="చిరునామా"
+            className="group relative px-8 py-2.5 rounded-full bg-[#1B1F24] hover:bg-[#2A3038] text-white font-noto-telugu font-bold text-base sm:text-lg tracking-wide shadow-lg cursor-pointer overflow-hidden z-10 border border-white/30 active:shadow-inner flex items-center justify-center gap-2.5 hover:scale-105 transition-all duration-300 min-w-[170px]"
+          >
+            {/* Shimmer sweep effect */}
+            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
+            <img
+              src="/assets/pin.svg"
+              alt="Location Pin"
+              className="w-5 h-5 object-contain brightness-0 invert relative z-10"
+            />
+            <span className="relative z-10 font-noto-telugu font-bold">చిరునామా</span>
+          </button>
         </motion.div>
       </div>
 
-      {/* 3. Bottom Decor (bottom_decor_1.svg) */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.01 }}
-        transition={{ duration: 0.9, delay: 0.3, ease: 'easeOut' }}
-        className="absolute bottom-0 inset-x-0 z-10 w-full flex justify-center pointer-events-none"
-      >
-        <img
-          src="/assets/bottom_decor_1.svg"
-          alt="Bottom Decoration"
-          className="w-full h-auto object-contain object-bottom drop-shadow-xl sm:max-w-xl md:max-w-2xl opacity-70"
-        />
-      </motion.div>
     </section>
   );
 };

@@ -13,44 +13,26 @@ const GALLERY_IMAGES: GalleryImage[] = [
   {
     id: '1',
     src: '/assets/gallery_1.png',
-    alt: 'Wedding Gallery Photo 1',
-    className: 'col-span-12 md:col-span-7 h-[280px] sm:h-[380px]',
+    alt: 'Housewarming Gallery Photo 1',
+    className: 'col-span-12 sm:col-span-6 h-[260px] sm:h-[340px]',
   },
   {
     id: '2',
     src: '/assets/gallery_2.png',
-    alt: 'Wedding Gallery Photo 2',
-    className: 'col-span-12 md:col-span-5 h-[240px] sm:h-[380px]',
+    alt: 'Housewarming Gallery Photo 2',
+    className: 'col-span-12 sm:col-span-6 h-[260px] sm:h-[340px]',
   },
   {
     id: '3',
     src: '/assets/gallery_3.png',
-    alt: 'Wedding Gallery Photo 3',
-    className: 'col-span-12 sm:col-span-6 md:col-span-4 h-[240px] sm:h-[280px]',
+    alt: 'Housewarming Gallery Photo 3',
+    className: 'col-span-12 sm:col-span-6 h-[260px] sm:h-[340px]',
   },
   {
     id: '4',
     src: '/assets/gallery_4.png',
-    alt: 'Wedding Gallery Photo 4',
-    className: 'col-span-12 sm:col-span-6 md:col-span-4 h-[240px] sm:h-[280px]',
-  },
-  {
-    id: '5',
-    src: '/assets/gallery_5.png',
-    alt: 'Wedding Gallery Photo 5',
-    className: 'col-span-12 md:col-span-4 h-[240px] sm:h-[280px]',
-  },
-  {
-    id: '6',
-    src: '/assets/gallery_6.png',
-    alt: 'Wedding Gallery Photo 6',
-    className: 'col-span-12 md:col-span-6 h-[260px] sm:h-[340px]',
-  },
-  {
-    id: '7',
-    src: '/assets/gallery_7.png',
-    alt: 'Wedding Gallery Photo 7',
-    className: 'col-span-12 md:col-span-6 h-[260px] sm:h-[340px]',
+    alt: 'Housewarming Gallery Photo 4',
+    className: 'col-span-12 sm:col-span-6 h-[260px] sm:h-[340px]',
   },
 ];
 
@@ -87,15 +69,7 @@ export const GallerySection: React.FC = () => {
   }, [handleKeyDown]);
 
   return (
-    <section className="relative min-h-screen w-full bg-[#E9E5E1] select-none snap-start snap-always overflow-x-hidden py-12 sm:py-16 px-4 sm:px-8 flex flex-col items-center justify-between">
-      {/* 1. Background Image (bg_1.svg) */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <img
-          src="/assets/bg_1.svg"
-          alt="Background Texture"
-          className="w-full h-full object-cover object-center opacity-90"
-        />
-      </div>
+    <section className="relative min-h-screen w-full bg-gradient-to-b from-[#F3E8DD] to-[#F2ECE4] select-none snap-start snap-always overflow-x-hidden py-12 sm:py-16 px-4 sm:px-8 flex flex-col items-center justify-between">
 
       {/* Main Content */}
       <div className="relative z-20 w-full max-w-5xl mx-auto flex flex-col items-center my-auto">

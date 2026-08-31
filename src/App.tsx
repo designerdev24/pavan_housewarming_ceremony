@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { Splash } from './components/Splash';
 import { Hero } from './components/Hero';
-import { BrideIntro } from './components/BrideIntro';
-import { GroomIntro } from './components/GroomIntro';
 import { SumuhurthamSection } from './components/SumuhurthamSection';
-import { TimelineSection } from './components/TimelineSection';
+import { SatyanarayanaSwamyVrathamSection } from './components/SatyanarayanaSwamyVrathamSection';
+import { VindhuSection } from './components/VindhuSection';
 import { GallerySection } from './components/GallerySection';
 import { FooterSection } from './components/FooterSection';
 import { MusicPlayer } from './components/MusicPlayer';
@@ -21,9 +20,9 @@ export default function App() {
   };
 
   return (
-    <div className="w-full min-h-screen bg-[#1A1816] flex justify-center items-start overflow-x-hidden">
-      {/* Mobile L Container (Fixed max-width ~430px on desktop screens, full width on mobile devices) */}
-      <main className="w-full max-w-[430px] min-h-screen bg-[#E9E5E1] text-[#3D2B1F] antialiased overflow-x-hidden snap-y snap-mandatory scroll-smooth no-scrollbar relative shadow-[0_0_60px_rgba(0,0,0,0.6)] sm:border-x sm:border-[#D4AF37]/30">
+    <div className="w-full min-h-screen bg-gradient-to-b from-[#F3E8DD] to-[#F2ECE4] flex justify-center items-start overflow-x-hidden">
+      {/* Responsive Container spanning full width for webview */}
+      <main className="w-full min-h-screen bg-gradient-to-b from-[#F3E8DD] to-[#F2ECE4] text-[#3D2B1F] antialiased overflow-x-hidden snap-y snap-mandatory scroll-smooth no-scrollbar relative">
         {/* 1. Splash Welcome Screen Portal */}
         <AnimatePresence mode="wait">
           {showSplash && (
@@ -40,10 +39,9 @@ export default function App() {
             className="w-full flex flex-col"
           >
             <Hero />
-            <BrideIntro />
-            <GroomIntro />
             <SumuhurthamSection />
-            <TimelineSection />
+            <SatyanarayanaSwamyVrathamSection />
+            <VindhuSection />
             <GallerySection />
             <FooterSection />
             <MusicPlayer autoPlay={playMusic} />
