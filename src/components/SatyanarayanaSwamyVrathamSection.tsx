@@ -43,14 +43,14 @@ export const SatyanarayanaSwamyVrathamSection: React.FC = () => {
         {/* Text Sequence */}
         <div className="flex flex-col items-center justify-center text-center space-y-3 sm:space-y-4">
           {/* Title: శ్రీ సత్యనారాయణ స్వామి \n వ్రతం (Ponnala, Bold font, Color #1B1F24, stroke FFFFFF) */}
-          <h2 className="font-ponnala text-3xl sm:text-5xl md:text-6xl text-[#1B1F24] font-bold leading-tight tracking-wider flex flex-col items-center justify-center paint-order-stroke [-webkit-text-stroke:3px_#ffffff] drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)] mb-1">
+          <h2 className="font-ponnala text-3xl sm:text-5xl md:text-6xl text-[#1B1F24] font-bold leading-tight tracking-wider flex flex-col items-center justify-center drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)] mb-1">
             <div className="flex justify-center flex-wrap">
               {titleLine1.map((char, index) => (
                 <motion.span
                   key={`st1-${index}`}
                   initial={{ opacity: 0, y: 20, scale: 0.8, filter: 'blur(6px)' }}
                   whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
-                  viewport={{ once: true, amount: 0.3 }}
+                  viewport={{ once: true }}
                   transition={{
                     duration: 0.45,
                     delay: 0.1 + index * 0.06,
@@ -68,7 +68,7 @@ export const SatyanarayanaSwamyVrathamSection: React.FC = () => {
                   key={`st2-${index}`}
                   initial={{ opacity: 0, y: 20, scale: 0.8, filter: 'blur(6px)' }}
                   whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
-                  viewport={{ once: true, amount: 0.3 }}
+                  viewport={{ once: true }}
                   transition={{
                     duration: 0.45,
                     delay: 0.1 + (titleLine1.length + index) * 0.06,
@@ -83,13 +83,13 @@ export const SatyanarayanaSwamyVrathamSection: React.FC = () => {
           </h2>
 
           {/* Line 2: 07-09-2026 (Ramabhadra, Regular, Color #9F5A2A, ffffff stroke) */}
-          <h3 className="font-ramabhadra text-4xl sm:text-6xl md:text-7xl text-[#9F5A2A] font-normal leading-none tracking-wider flex justify-center flex-wrap paint-order-stroke [-webkit-text-stroke:4px_#ffffff] drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)] pt-1">
+          <h3 className="font-ramabhadra text-4xl sm:text-6xl md:text-7xl text-[#9F5A2A] font-normal leading-none tracking-wider flex justify-center flex-wrap drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)] pt-1">
             {dateStr.map((char, index) => (
               <motion.span
                 key={`std-${index}`}
                 initial={{ opacity: 0, y: 18, scale: 0.8, filter: 'blur(5px)' }}
                 whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
-                viewport={{ once: true, amount: 0.3 }}
+                viewport={{ once: true }}
                 transition={{
                   duration: 0.4,
                   delay: 0.4 + index * 0.06,
@@ -103,13 +103,13 @@ export const SatyanarayanaSwamyVrathamSection: React.FC = () => {
           </h3>
 
           {/* Line 3: సోమవారం (Noto Sans Telugu, bold, Color #1B1F24, stroke ffffff) */}
-          <h4 className="font-noto-telugu text-2xl sm:text-4xl md:text-5xl text-[#1B1F24] font-bold leading-none tracking-wide flex justify-center flex-wrap paint-order-stroke [-webkit-text-stroke:3px_#ffffff] drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
+          <h4 className="font-noto-telugu text-2xl sm:text-4xl md:text-5xl text-[#1B1F24] font-bold leading-none tracking-wide flex justify-center flex-wrap drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
             {dayStr.map((char, index) => (
               <motion.span
                 key={`stdy-${index}`}
                 initial={{ opacity: 0, y: 15, filter: 'blur(4px)' }}
                 whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                viewport={{ once: true, amount: 0.3 }}
+                viewport={{ once: true }}
                 transition={{
                   duration: 0.4,
                   delay: 0.7 + index * 0.05,
@@ -123,13 +123,13 @@ export const SatyanarayanaSwamyVrathamSection: React.FC = () => {
           </h4>
 
           {/* Line 4: ఉ.గం. 10:24 ని. లకు (Noto Sans Telugu, SemiCondensedBold, Color #9F5A2A, ffffff stroke) */}
-          <h4 className="font-noto-telugu text-xl sm:text-3xl md:text-4xl text-[#9F5A2A] font-bold leading-none tracking-wide flex justify-center flex-wrap paint-order-stroke [-webkit-text-stroke:3px_#ffffff] drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
+          <h4 className="font-noto-telugu text-xl sm:text-3xl md:text-4xl text-[#9F5A2A] font-bold leading-none tracking-wide flex justify-center flex-wrap drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
             {timeStr.map((char, index) => (
               <motion.span
                 key={`sttm-${index}`}
                 initial={{ opacity: 0, y: 15, filter: 'blur(4px)' }}
                 whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                viewport={{ once: true, amount: 0.3 }}
+                viewport={{ once: true }}
                 transition={{
                   duration: 0.4,
                   delay: 1.0 + index * 0.05,

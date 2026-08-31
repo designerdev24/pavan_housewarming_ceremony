@@ -55,7 +55,7 @@ export const FooterSection: React.FC = () => {
         </motion.div>
 
         {/* Title: మీ ఆగమనాభిలాషులు */}
-        <h2 className="font-ponnala text-3xl sm:text-5xl md:text-6xl text-[#1B1F24] font-bold leading-tight tracking-wider flex justify-center flex-wrap mb-4 sm:mb-6 text-center paint-order-stroke [-webkit-text-stroke:3px_#ffffff] drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
+        <h2 className="font-ponnala text-3xl sm:text-5xl md:text-6xl text-[#1B1F24] font-bold leading-tight tracking-wider flex justify-center flex-wrap mb-4 sm:mb-6 text-center drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
           {headerTitle.map((char, index) => (
             <motion.span
               key={`f-ht-${index}`}
@@ -77,7 +77,7 @@ export const FooterSection: React.FC = () => {
         {/* Host Names */}
         <div className="flex flex-col items-center justify-center space-y-1 sm:space-y-2 mb-4">
           {/* Name 1: శ్రీ చెంబాటి కోటేశ్వరరావు */}
-          <h3 className="font-ramabhadra text-2xl sm:text-4xl md:text-5xl text-[#9F5A2A] font-normal leading-tight tracking-wide flex justify-center flex-wrap paint-order-stroke [-webkit-text-stroke:3px_#ffffff] drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
+          <h3 className="font-ramabhadra text-2xl sm:text-4xl md:text-5xl text-[#9F5A2A] font-normal leading-tight tracking-wide flex justify-center flex-wrap drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
             {name1.map((char, index) => (
               <motion.span
                 key={`f-n1-${index}`}
@@ -97,7 +97,7 @@ export const FooterSection: React.FC = () => {
           </h3>
 
           {/* Name 2: శ్రీమతి చెంబాటి నగరాణి */}
-          <h3 className="font-ramabhadra text-2xl sm:text-4xl md:text-5xl text-[#9F5A2A] font-normal leading-tight tracking-wide flex justify-center flex-wrap paint-order-stroke [-webkit-text-stroke:3px_#ffffff] drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
+          <h3 className="font-ramabhadra text-2xl sm:text-4xl md:text-5xl text-[#9F5A2A] font-normal leading-tight tracking-wide flex justify-center flex-wrap drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
             {name2.map((char, index) => (
               <motion.span
                 key={`f-n2-${index}`}
