@@ -17,7 +17,7 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ onThoranamLoaded }) => {
   const [showScrollBtn, setShowScrollBtn] = useState(true);
 
-  const word1 = getGraphemes('చెంబాటి');
+  const word1 = getGraphemes('చెంబేటి');
   const word2 = getGraphemes('వారి');
   const word3 = getGraphemes('గృహప్రవేశ ఆహ్వానం');
 

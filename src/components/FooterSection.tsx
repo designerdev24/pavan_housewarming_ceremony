@@ -12,8 +12,8 @@ const getGraphemes = (str: string): string[] => {
 
 export const FooterSection: React.FC = () => {
   const headerTitle = getGraphemes('మీ ఆగమనాభిలాషులు');
-  const name1 = getGraphemes('శ్రీ చెంబాటి కోటేశ్వరరావు');
-  const name2 = getGraphemes('శ్రీమతి చెంబాటి నగరాణి');
+  const name1 = getGraphemes('శ్రీ చెంబేటి కోటేశ్వరరావు');
+  const name2 = getGraphemes('శ్రీమతి చెంబేటి నాగరాణి');
 
   return (
     <section className="relative min-h-screen w-full flex flex-col justify-between items-center overflow-hidden bg-gradient-to-b from-[#F3E8DD] to-[#F2ECE4] select-none snap-start snap-always">
@@ -55,7 +55,7 @@ export const FooterSection: React.FC = () => {
         </motion.div>
 
         {/* Title: మీ ఆగమనాభిలాషులు */}
-        <h2 className="font-dhurjati text-3xl sm:text-5xl md:text-6xl text-[#1B1F24] font-bold leading-tight tracking-wider flex justify-center flex-wrap mb-4 sm:mb-6 text-center paint-order-stroke [-webkit-text-stroke:3px_#ffffff] drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
+        <h2 className="font-ponnala text-3xl sm:text-5xl md:text-6xl text-[#1B1F24] font-bold leading-tight tracking-wider flex justify-center flex-wrap mb-4 sm:mb-6 text-center paint-order-stroke [-webkit-text-stroke:3px_#ffffff] drop-shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
           {headerTitle.map((char, index) => (
             <motion.span
               key={`f-ht-${index}`}
