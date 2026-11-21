@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
-import homeImage from '../../assets/home.png';
+import homeImage from '../../assets/home.webp';
 
 const getGraphemes = (str: string): string[] => {
   if (typeof Intl !== 'undefined' && Intl.Segmenter) {
@@ -17,7 +17,7 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ onThoranamLoaded }) => {
   const [showScrollBtn, setShowScrollBtn] = useState(true);
 
-  const word1 = getGraphemes('చెంబేటి');
+  const word1 = getGraphemes('అనుముల');
   const word2 = getGraphemes('వారి');
   const word3 = getGraphemes('గృహప్రవేశ ఆహ్వానం');
 

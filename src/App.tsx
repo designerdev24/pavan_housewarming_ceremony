@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { Splash } from './components/Splash';
 import { Hero } from './components/Hero';
-import { SumuhurthamSection } from './components/SumuhurthamSection';
+// import { SumuhurthamSection } from './components/SumuhurthamSection';
 import { SatyanarayanaSwamyVrathamSection } from './components/SatyanarayanaSwamyVrathamSection';
 import { VindhuSection } from './components/VindhuSection';
-import { GallerySection } from './components/GallerySection';
+// import { GallerySection } from './components/GallerySection';
 import { FooterSection } from './components/FooterSection';
 import { MusicPlayer } from './components/MusicPlayer';
 
@@ -39,10 +39,10 @@ export default function App() {
             className="w-full flex flex-col"
           >
             <Hero />
-            <SumuhurthamSection />
+            {/* <SumuhurthamSection /> */}
             <SatyanarayanaSwamyVrathamSection />
             <VindhuSection />
-            <GallerySection />
+            {/* <GallerySection /> */}
             <FooterSection />
             <MusicPlayer autoPlay={playMusic} />
           </motion.div>

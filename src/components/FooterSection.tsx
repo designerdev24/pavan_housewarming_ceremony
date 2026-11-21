@@ -12,8 +12,8 @@ const getGraphemes = (str: string): string[] => {
 
 export const FooterSection: React.FC = () => {
   const headerTitle = getGraphemes('మీ ఆగమనాభిలాషులు');
-  const name1 = getGraphemes('శ్రీ చెంబేటి కోటేశ్వరరావు');
-  const name2 = getGraphemes('శ్రీమతి చెంబేటి నాగరాణి');
+  const name1 = getGraphemes('శ్రీ అనుముల పవన్ కుమార్');
+  const name2 = getGraphemes('శ్రీ పట్టెo వెంకట లక్ష్మి');
 
   return (
     <section className="relative min-h-screen w-full flex flex-col justify-between items-center overflow-hidden bg-gradient-to-b from-[#F3E8DD] to-[#F2ECE4] select-none snap-start snap-always">
@@ -146,7 +146,7 @@ export const FooterSection: React.FC = () => {
             చిరునామా
           </h4>
           <p className="font-noto-telugu text-sm sm:text-base text-[#1B1F24] font-semibold leading-relaxed tracking-normal text-center">
-            ప్లాట్ నెం. 645A, ఎల్లయ్య ఎన్క్లేవ్, AB కాలనీ, తెల్లాపూర్.
+            ప్లాట్ నెం. 167 , శ్రీనివాసం లేఅవుట్ ఫేజ్-1 , సత్తెనపల్లి.
           </p>
         </motion.div>
 
@@ -159,7 +159,7 @@ export const FooterSection: React.FC = () => {
           className="mt-4 sm:mt-5 z-30 flex justify-center w-full"
         >
           <button
-            onClick={() => window.open('https://www.google.com/maps/search/?api=1&query=17.472972,78.297611', '_blank')}
+            onClick={() => window.open('https://maps.app.goo.gl/z1Wanysbny4YSmUF6?g_st=aw', '_blank')}
             aria-label="చిరునామా"
             className="group relative px-8 py-2.5 rounded-full bg-[#1B1F24] hover:bg-[#2A3038] text-white font-noto-telugu font-bold text-base sm:text-lg tracking-wide shadow-lg cursor-pointer overflow-hidden z-10 border border-white/30 active:shadow-inner flex items-center justify-center gap-2.5 hover:scale-105 transition-all duration-300 min-w-[170px]"
           >

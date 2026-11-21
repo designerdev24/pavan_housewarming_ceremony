@@ -14,9 +14,9 @@ const getGraphemes = (str: string): string[] => {
 export const SatyanarayanaSwamyVrathamSection: React.FC = () => {
   const titleLine1 = getGraphemes('శ్రీ సత్యనారాయణ స్వామి');
   const titleLine2 = getGraphemes('వ్రతం');
-  const dateStr = getGraphemes('07-09-2026');
-  const dayStr = getGraphemes('సోమవారం');
-  const timeStr = getGraphemes('ఉదయం 11:00 ని. లకు');
+  const dateStr = getGraphemes('22-11-2026');
+  const dayStr = getGraphemes('ఆదివారం');
+  const timeStr = getGraphemes('ఉదయం 10:00 ని. లకు');
 
   return (
     <section className="relative w-full flex flex-col justify-start items-center overflow-hidden bg-gradient-to-b from-[#F3E8DD] to-[#F2ECE4] select-none snap-start snap-always pb-0 mb-0 leading-none">
@@ -143,20 +143,28 @@ export const SatyanarayanaSwamyVrathamSection: React.FC = () => {
           </h4>
         </div>
 
-        {/* Latha Border (latha_border_1.svg) */}
+        {/* Address Location Button (Replaces latha_border_1) */}
         <motion.div
-          initial={{ scaleX: 0, opacity: 0 }}
-          whileInView={{ scaleX: 1, opacity: 1 }}
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8, delay: 1.3, ease: [0.25, 1, 0.5, 1] }}
-          style={{ transformOrigin: 'center' }}
-          className="mt-4 sm:mt-5 flex justify-center w-full max-w-[240px] sm:max-w-[300px]"
+          transition={{ duration: 0.6, delay: 1.3, ease: 'easeOut' }}
+          className="mt-4 sm:mt-5 z-30 flex justify-center w-full"
         >
-          <img
-            src="/assets/latha_border_1.svg"
-            alt="Decorative Border"
-            className="w-full h-auto object-contain"
-          />
+          <button
+            onClick={() => window.open('https://maps.app.goo.gl/z1Wanysbny4YSmUF6?g_st=aw', '_blank')}
+            aria-label="చిరునామా"
+            className="group relative px-8 py-2.5 rounded-full bg-[#1B1F24] hover:bg-[#2A3038] text-white font-noto-telugu font-bold text-base sm:text-lg tracking-wide shadow-lg cursor-pointer overflow-hidden z-10 border border-white/30 active:shadow-inner flex items-center justify-center gap-2.5 hover:scale-105 transition-all duration-300 min-w-[170px]"
+          >
+            {/* Shimmer sweep effect */}
+            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
+            <img
+              src="/assets/pin.svg"
+              alt="Location Pin"
+              className="w-5 h-5 object-contain brightness-0 invert relative z-10"
+            />
+            <span className="relative z-10 font-noto-telugu font-bold">చిరునామా</span>
+          </button>
         </motion.div>
       </div>
 

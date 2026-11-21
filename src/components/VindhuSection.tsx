@@ -13,8 +13,8 @@ const getGraphemes = (str: string): string[] => {
 
 export const VindhuSection: React.FC = () => {
   const title = getGraphemes('విందు');
-  const dateStr = getGraphemes('07-09-2026');
-  const dayStr = getGraphemes('సోమవారం');
+  const dateStr = getGraphemes('22-11-2026');
+  const dayStr = getGraphemes('ఆదివారం');
   const timeStr = getGraphemes('మధ్యాహ్నం 12:30 ని. ల నుండి');
 
   return (

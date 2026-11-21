@@ -131,7 +131,7 @@ export const SumuhurthamSection: React.FC = () => {
           className="mt-4 sm:mt-5 z-30 flex justify-center w-full"
         >
           <button
-            onClick={() => window.open('https://www.google.com/maps/search/?api=1&query=17.472972,78.297611', '_blank')}
+            onClick={() => window.open('https://maps.app.goo.gl/z1Wanysbny4YSmUF6?g_st=aw', '_blank')}
             aria-label="చిరునామా"
             className="group relative px-8 py-2.5 rounded-full bg-[#1B1F24] hover:bg-[#2A3038] text-white font-noto-telugu font-bold text-base sm:text-lg tracking-wide shadow-lg cursor-pointer overflow-hidden z-10 border border-white/30 active:shadow-inner flex items-center justify-center gap-2.5 hover:scale-105 transition-all duration-300 min-w-[170px]"
           >

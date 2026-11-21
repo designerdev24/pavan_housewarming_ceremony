@@ -64,11 +64,11 @@ export const Splash: React.FC<SplashProps> = ({ onEnter }) => {
             className="h-[46vh] sm:h-[56vh] max-h-[480px] w-auto object-contain drop-shadow-2xl"
           />
 
-          {/* Gruhapravesham Text Image centered over the door (reduced mobile size by 10%) */}
+          {/* Gruhapravesham Text Image centered over the door */}
           <img
             src={gruhapraveshamText}
-            alt="గృహప్రవేశం"
-            className="absolute inset-0 m-auto w-[28%] sm:w-[32%] max-w-[110px] sm:max-w-[144px] h-auto object-contain drop-shadow-xl pointer-events-none"
+            alt="అనుముల వారి నూతన గృహప్రవేశ ఆహ్వానము"
+            className="absolute inset-0 m-auto w-[30%] sm:w-[34%] max-w-[125px] sm:max-w-[155px] h-auto object-contain drop-shadow-xl pointer-events-none"
           />
         </motion.div>
 
