@@ -13,7 +13,7 @@ const getGraphemes = (str: string): string[] => {
 export const FooterSection: React.FC = () => {
   const headerTitle = getGraphemes('మీ ఆగమనాభిలాషులు');
   const name1 = getGraphemes('శ్రీ అనుముల పవన్ కుమార్');
-  const name2 = getGraphemes('శ్రీ పట్టెం వెంకట లక్ష్మి');
+  const name2 = getGraphemes('శ్రీమతి పట్టెం వెంకట లక్ష్మి');
 
   return (
     <section className="relative min-h-screen w-full flex flex-col justify-between items-center overflow-hidden bg-gradient-to-b from-[#F3E8DD] to-[#F2ECE4] select-none snap-start snap-always">
